@@ -2,5 +2,5 @@
 
 Just an example project, nothing special here. :)
 
-[!README.png](./README.png)
+![README.png](./README.png)
 
