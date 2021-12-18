@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>node-socketio-example</title>
+  </head>
+  <body>
+    <div>Events emitted from service:</div>
+    <ul id="events"></ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.js"></script>
+    <script>
+      const events = document.querySelector('#events');
+
+      const socket = io('http://localhost:3001');
+
+      socket.on('notification', function (msg) {
+        appendEvent(msg);
+      });
+
+      function appendEvent(msg) {
+        const item = document.createElement('li');
+
+        item.textContent = JSON.stringify(msg);
+
+        events.appendChild(item);
+      }
+    </script>
+  </body>
+</html>
